@@ -73,28 +73,3 @@ export const get_mail_titles = async (page: puppeteer.Page): Promise<string[]> =
 
   return mail_titles;
 }
-
-/* export async function getMailList() {
-  const id_password = await input();
-
-  let page = await puppeteer_ready();
-  page = await connect_page(page);
-  page = await login(id_password, page);
-  page = await move_to_gmail(page);
-  const senders: string[] = await get_sender(page);
-  const subjects: string[] = await get_mail_titles(page);
-
-  const mail_informations: mail[] = [];
-
-  //메일제목과 보낸사람을 객체배열에 저장
-  for (let i = 0; i < subjects.length; i++) {
-    mail_informations.push({
-      subject: subjects[i],
-      sender: senders[i]
-    });
-  }
-
-  console.log(mail_informations);
-} */
-
-//getMailList();

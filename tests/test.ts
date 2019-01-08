@@ -2,7 +2,6 @@ import { input, puppeteer_ready, connect_page, login, get_sender, get_mail_title
 import { mail, user } from '../jc8n/interfaces'
 import { assert } from 'chai';
 import { puppeteer } from '../node_modules/puppeteer';
-// import { describe } from '../node_modules/ts-mocha'
 
 describe('### Third assignment ###', function () {
     let id_password: user;
