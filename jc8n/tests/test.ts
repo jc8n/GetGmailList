@@ -1,7 +1,7 @@
-import { input, puppeteer_ready, connect_page, login, get_sender, get_mail_titles } from '../jc8n/getMailList';
-import { mail, user } from '../jc8n/interfaces'
+import { input, puppeteer_ready, connect_page, login, get_sender, get_mail_titles } from '../getMailList';
+import { mail, user } from '../interfaces'
 import { assert } from 'chai';
-import { puppeteer } from '../node_modules/puppeteer';
+import { puppeteer } from '../../node_modules/puppeteer';
 
 describe('### Third assignment ###', function () {
     let id_password: user;
@@ -47,14 +47,14 @@ describe('### Third assignment ###', function () {
     it('#5 get sender list', async () => {
         senders = await get_sender(page);
         
-        assert.isNotNull(senders);
+        assert.isArray(senders);
     }).timeout(10000)
 
     let subjects;
     it('#6 get mail title list', async () => {
         subjects = await get_mail_titles(page);
         
-        assert.isNotNull(subjects);
+        assert.isArray(subjects);
     }).timeout(10000)
 
     it('#7 output mail list', () => {
@@ -69,6 +69,6 @@ describe('### Third assignment ###', function () {
         }
 
         console.log(mails);
-        assert.isNotNull(mails);
+        assert.typeOf(mails, 'Array', 'this is not mail Array');
     })
 })
