@@ -34,7 +34,7 @@ export const connect_page = async (page: puppeteer.Page): Promise<puppeteer.Resp
 }
 
 //###3 아이디 비밀번호 입력 후 로그인
-export const login = async (user_information: user, page: puppeteer.Page) => {
+export const login = async (user_information: user, page: puppeteer.Page): Promise<void> => {
   //await navigationPromise
 
   //메일주소 입력 후 다음버튼 클릭
@@ -50,9 +50,6 @@ export const login = async (user_information: user, page: puppeteer.Page) => {
   }
   await page.type('input[type="password"]', user_information.password)
   await page.click('#passwordNext')
-
-
-
 }
 
 //###4 보낸사람 추출
